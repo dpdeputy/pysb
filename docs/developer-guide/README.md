@@ -47,3 +47,4 @@ We welcome contributions! Please follow these guidelines:
 -   Ensure all tests pass before submitting a pull request.
 -   Follow the coding style enforced by `ruff`.
 -   Write clear and concise commit messages.
+-   For releases, please follow the [Release Workflow](./release-workflow.md).
