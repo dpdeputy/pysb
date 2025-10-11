@@ -1,0 +1,57 @@
+"""Unit tests for the UserRepository."""
+import pytest
+
+from base.examples.models import User
+from base.examples.repositories import UserRepository
+
+
+@pytest.fixture
+def user_repository() -> UserRepository:
+    """Returns a new instance of the UserRepository for each test."""
+    return UserRepository()
+
+
+def test_save_new_user(user_repository: UserRepository):
+    """Tests that a new user is saved correctly and assigned an ID."""
+    user = User(name="Test User", email="test@example.com")
+    saved_user = user_repository.save(user)
+    assert saved_user.id == 1
+    assert user_repository.find_by_id(1) is not None
+
+
+def test_save_existing_user(user_repository: UserRepository):
+    """Tests that an existing user is updated correctly."""
+    user = User(name="Test User", email="test@example.com")
+    user_repository.save(user)
+    user.name = "Updated Name"
+    updated_user = user_repository.save(user)
+    assert updated_user.name == "Updated Name"
+    assert user_repository.find_by_id(1).name == "Updated Name"
+
+
+def test_find_by_id(user_repository: UserRepository):
+    """Tests finding a user by ID."""
+    user = User(name="Test User", email="test@example.com")
+    saved_user = user_repository.save(user)
+    found_user = user_repository.find_by_id(saved_user.id)
+    assert found_user is not None
+    assert found_user.name == "Test User"
+
+
+def test_find_by_id_not_found(user_repository: UserRepository):
+    """Tests that find_by_id returns None for a non-existent user."""
+    assert user_repository.find_by_id(999) is None
+
+
+def test_find_by_email(user_repository: UserRepository):
+    """Tests finding a user by email."""
+    user = User(name="Test User", email="test@example.com")
+    user_repository.save(user)
+    found_user = user_repository.find_by_email("test@example.com")
+    assert found_user is not None
+    assert found_user.name == "Test User"
+
+
+def test_find_by_email_not_found(user_repository: UserRepository):
+    """Tests that find_by_email returns None for a non-existent email."""
+    assert user_repository.find_by_email("none@example.com") is None
