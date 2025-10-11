@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "base"
+dynamic = ["version"]
+description = "A base package for the python-sandbox project."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+    { name = "The Python Sandbox Project", email = "contact@example.com" }
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+    "ruff",
+    "mypy",
+    "pre-commit",
+    "pydantic[email]",
+    "mkdocs",
+    "mkdocs-material",
+]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "W", "I", "UP", "B", "C4"]
+ignore = ["E501"]
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests/unit",
+    "tests/integration",
+]
+
+[tool.hatch.version]
+source = "vcs"
