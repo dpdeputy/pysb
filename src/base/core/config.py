@@ -10,9 +10,7 @@ class ProjectConfig(BaseModel):
     name: str = Field(..., description="Project name")
     version: str = Field(..., description="Project version")
     description: str = Field(..., description="Project description")
-    authors: List[str] = Field(
-        default_factory=list, description="Project authors"
-    )
+    authors: List[str] = Field(default_factory=list, description="Project authors")
     dependencies: List[str] = Field(
         default_factory=list, description="Runtime dependencies"
     )

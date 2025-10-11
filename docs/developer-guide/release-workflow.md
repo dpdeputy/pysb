@@ -9,8 +9,7 @@ This document outlines the process for creating a new release of the `base` pack
 - [ ] Update the `CHANGELOG.md` with the latest changes.
 - [ ] Determine the new version number based on semantic versioning.
 - [ ] Create a new release branch from `develop`.
-- [ ] Update the version number in `pyproject.toml`.
-- [ ] Create a release tag and push it to the repository.
+- [ ] Create a release tag (e.g., `v0.1.0`) and push it to the repository.
 - [ ] The CI/CD pipeline will automatically build and publish the release.
 
 ## Versioning Procedures
