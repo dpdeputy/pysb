@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
@@ -9,7 +9,7 @@ description = "A base package for the python-sandbox project."
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [
-    { name = "Your Name", email = "you@example.com" }
+    { name = "The Python Sandbox Project", email = "contact@example.com" }
 ]
 
 [project.optional-dependencies]
@@ -21,6 +21,8 @@ dev = [
     "mypy",
     "pre-commit",
     "pydantic[email]",
+    "mkdocs",
+    "mkdocs-material",
 ]
 
 [tool.ruff]

@@ -1,0 +1,10 @@
+site_name: python-sandbox
+theme:
+  name: material
+repo_url: https://gitlab.com/example/python-sandbox
+copyright: Copyright &copy; 2024 The Python Sandbox Project
+
+nav:
+  - Home: index.md
+  - User Guide: user-guide/README.md
+  - Developer Guide: developer-guide/README.md
