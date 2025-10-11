@@ -20,7 +20,7 @@ dev = [
     "ruff",
     "mypy",
     "pre-commit",
-    "pydantic",
+    "pydantic[email]",
 ]
 
 [tool.ruff]
