@@ -1,6 +1,5 @@
 """Unit tests for the custom exceptions in the core package."""
 import pytest
-
 from base.core.exceptions import (
     BaseError,
     ConfigurationError,
@@ -8,7 +7,7 @@ from base.core.exceptions import (
 )
 
 
-def test_custom_exceptions():
+def test_custom_exceptions() -> None:
     """Tests that the custom exceptions can be raised and caught."""
     with pytest.raises(BaseError):
         raise BaseError("This is a base error.")
@@ -20,7 +19,7 @@ def test_custom_exceptions():
         raise ConfigurationError("This is a configuration error.")
 
 
-def test_custom_exception_hierarchy():
+def test_custom_exception_hierarchy() -> None:
     """Tests that the custom exceptions inherit from BaseError."""
     with pytest.raises(BaseError):
         raise ValidationError("This should be caught as BaseError.")
