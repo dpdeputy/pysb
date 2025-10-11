@@ -7,7 +7,7 @@ name = "base"
 dynamic = ["version"]
 description = "A base package for the python-sandbox project."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.8, <3.13"
 authors = [
     { name = "The Python Sandbox Project", email = "contact@example.com" }
 ]
