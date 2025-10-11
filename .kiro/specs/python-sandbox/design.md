@@ -136,7 +136,7 @@ class User(BaseModel):
     email: EmailStr = Field(..., description="User email address")
     created_at: datetime = Field(default_factory=datetime.utcnow)
     is_active: bool = Field(default=True)
-    
+
     @validator('name')
     def validate_name(cls, v):
         if not v.strip():
@@ -145,15 +145,15 @@ class User(BaseModel):
 
 class UserRepository:
     """Example repository pattern implementation"""
-    
+
     def save(self, user: User) -> User:
         """Save user to storage"""
         pass
-    
+
     def find_by_id(self, user_id: int) -> Optional[User]:
         """Find user by ID"""
         pass
-    
+
     def find_by_email(self, email: str) -> Optional[User]:
         """Find user by email"""
         pass

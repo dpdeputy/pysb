@@ -1,14 +1,15 @@
 """Unit tests for the Pydantic models in the core package."""
-import pytest
-from pydantic import ValidationError
+from typing import Any, Dict
 
+import pytest
 from base.core.config import ProjectConfig
 from base.examples.models import User
+from pydantic import ValidationError
 
 
-def test_project_config_model():
+def test_project_config_model() -> None:
     """Tests the ProjectConfig model for correct data handling."""
-    config_data = {
+    config_data: Dict[str, Any] = {
         "name": "test-project",
         "version": "1.0.0",
         "description": "A test project.",
@@ -22,9 +23,9 @@ def test_project_config_model():
     assert config.authors == ["Test Author"]
 
 
-def test_user_model_successful():
+def test_user_model_successful() -> None:
     """Tests the User model with valid data."""
-    user_data = {
+    user_data: Dict[str, Any] = {
         "id": 1,
         "name": "John Doe",
         "email": "john.doe@example.com",
@@ -36,13 +37,13 @@ def test_user_model_successful():
     assert user.is_active is True
 
 
-def test_user_model_invalid_email():
+def test_user_model_invalid_email() -> None:
     """Tests that the User model raises a validation error for an invalid email."""
     with pytest.raises(ValidationError):
         User(id=2, name="Jane Doe", email="invalid-email")
 
 
-def test_user_model_empty_name():
+def test_user_model_empty_name() -> None:
     """Tests that the User model's custom validator rejects an empty name."""
     with pytest.raises(ValueError, match="Name cannot be empty or whitespace"):
         User(id=3, name="   ", email="jane.doe@example.com")

@@ -9,9 +9,7 @@ class User(BaseModel):
     """Represents a user in the system."""
 
     id: Optional[int] = Field(default=None, description="Unique user identifier")
-    name: str = Field(
-        ..., min_length=1, max_length=100, description="User full name"
-    )
+    name: str = Field(..., min_length=1, max_length=100, description="User full name")
     email: EmailStr = Field(..., description="User email address")
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     is_active: bool = Field(default=True)
