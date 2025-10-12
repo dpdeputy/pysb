@@ -1,0 +1,10 @@
+site_name: Looker Admin Tool
+theme:
+  name: material
+repo_url: https://gitlab.com/example/looker-admin-tool
+copyright: Copyright &copy; 2024 Looker Admin Tool
+
+nav:
+  - Home: index.md
+  - User Guide: user-guide/README.md
+  - Developer Guide: developer-guide/README.md
