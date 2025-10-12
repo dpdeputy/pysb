@@ -3,13 +3,16 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "base"
+name = "{{ project_slug }}"
 dynamic = ["version"]
-description = "A base package for the python-sandbox project."
+description = "{{ project_description }}"
 readme = "README.md"
 requires-python = ">=3.8, <3.13"
 authors = [
     { name = "The Python Sandbox Project", email = "contact@example.com" }
+]
+dependencies = [
+    "pydantic[email]",
 ]
 
 [project.optional-dependencies]
@@ -20,7 +23,6 @@ dev = [
     "ruff",
     "mypy",
     "pre-commit",
-    "pydantic[email]",
     "mkdocs",
     "mkdocs-material",
 ]
@@ -51,6 +53,13 @@ testpaths = [
     "tests/unit",
     "tests/integration",
 ]
+pythonpath = ["src"]
 
 [tool.hatch.version]
 source = "vcs"
+
+[tool.hatch.version.raw-options]
+search_parent_directories = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/{{ module_name }}"]
