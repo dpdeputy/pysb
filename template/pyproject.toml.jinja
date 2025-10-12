@@ -9,7 +9,7 @@ description = "{{ project_description }}"
 readme = "README.md"
 requires-python = ">=3.8, <3.13"
 authors = [
-    { name = "The Python Sandbox Project", email = "contact@example.com" }
+    { name = "{{ project_name }}", email = "{{ author_email | default('contact@example.com') }}" }
 ]
 dependencies = [
     "pydantic[email]",
