@@ -3,13 +3,13 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "{{ project_slug }}"
+name = "adk-agent"
 dynamic = ["version"]
-description = "{{ project_description }}"
+description = "A simple ADK agent."
 readme = "README.md"
 requires-python = ">=3.8, <3.13"
 authors = [
-    { name = "{{ project_name }}", email = "{{ author_email | default('contact@example.com') }}" }
+    { name = "The ADK Agent Project", email = "contact@example.com" }
 ]
 dependencies = [
     "pydantic[email]",
@@ -62,4 +62,4 @@ source = "vcs"
 search_parent_directories = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/{{ module_name }}"]
+packages = ["src/adk_agent"]

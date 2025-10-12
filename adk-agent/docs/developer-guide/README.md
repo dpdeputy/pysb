@@ -8,7 +8,7 @@ To set up the project for development, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone {{ project_gitlab_url }}
+    git clone https://gitlab.com/example/python-sandbox.git
     cd python-sandbox
     ```
 
