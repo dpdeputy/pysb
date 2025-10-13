@@ -1,8 +1,8 @@
 """Example repository pattern implementation."""
 from typing import Dict, Optional
 
-from {{ module_name }}.core.interfaces import Repository
-from {{ module_name }}.utils.logging import logger
+from adk_agent.core.interfaces import Repository
+from adk_agent.utils.logging import logger
 
 from .models import User
 
