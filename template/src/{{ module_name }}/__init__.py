@@ -1,3 +1,0 @@
-"""A base package for the {{ project_name }} project."""
-
-__version__ = "0.1.0"

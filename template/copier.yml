@@ -22,5 +22,5 @@ project_gitlab_url:
   default: "https://gitlab.com/example/python-sandbox"
 
 module_name:
-  type: str
-  help: What is your Python module name?
+  default: "{{ project_slug | replace('-', '_') }}"
+  when: false

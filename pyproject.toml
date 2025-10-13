@@ -37,6 +37,7 @@ include = ["src/pysb"]
 target-version = "py311"
 line-length = 100
 fix = true
+extend-exclude = ["template"]
 
 [tool.ruff.format]
 quote-style = "double"

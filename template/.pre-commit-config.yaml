@@ -17,4 +17,7 @@ repos:
     hooks:
     -   id: mypy
         args: [--config-file, pyproject.toml]
-        additional_dependencies: ["pydantic"]
+        additional_dependencies:
+        - pydantic
+        - pytest
+        - pytest-mock
