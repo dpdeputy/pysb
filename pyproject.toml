@@ -1,0 +1,106 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pysb"
+version = "0.1.0"
+description = "Python sandbox template"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Python Dev", email = "developers@example.com" }]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+pysb-hello = "pysb.hello:main"
+
+[project.optional-dependencies]
+dev = [
+  "mypy>=1.11,<2",
+  "pre-commit>=3.7,<4",
+  "pytest>=8.3,<9",
+  "pytest-cov>=4.1,<5",
+  "ruff>=0.6,<0.7",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pysb"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src/pysb"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+fix = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+select = [
+  "E",
+  "F",
+  "I",
+  "B",
+  "UP",
+  "ASYNC",
+  "S",
+  "N",
+  "ANN",
+  "C4",
+]
+ignore = [
+  "ANN101",
+  "ANN102",
+]
+# ignore-init-module-imports is deprecated - removed
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*" = ["S101", "S603"]  # Allow assert and subprocess in tests
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+show_error_codes = true
+pretty = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+allow_untyped_defs = true
+allow_untyped_calls = true
+allow_untyped_decorators = true
+
+[[tool.mypy.overrides]]
+module = "pysb.*"
+ignore_missing_imports = false
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "--strict-markers --strict-config --cov=src --cov-report=term-missing"
+filterwarnings = [
+  "error::DeprecationWarning",
+  "error::PendingDeprecationWarning",
+]
+
+[tool.coverage.run]
+branch = true
+parallel = true
+source = ["src"]
+
+[tool.coverage.report]
+omit = ["*/tests/*", "*/__init__.py"]
+skip_covered = true
+show_missing = true
+precision = 2
