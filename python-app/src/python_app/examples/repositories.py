@@ -1,7 +1,7 @@
 from typing import Dict, Optional
 
-from {{ module_name }}.core.interfaces import Repository
-from {{ module_name }}.utils.logging import logger
+from python_app.core.interfaces import Repository
+from python_app.utils.logging import logger
 
 from .models import User
 

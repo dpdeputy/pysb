@@ -1,6 +1,6 @@
 theme:
   name: material
-repo_url: https://gitlab.com/example/{{ project_slug }}
+repo_url: https://gitlab.com/example/python-app
 copyright: Copyright &copy; 2024 The Python Sandbox Project
 
 nav:

@@ -6,7 +6,7 @@ This guide explains how to build and run the project using containers.
 To build the Docker image for this project, run the following command from the root of the repository:
 
 ```bash
-docker build -t {{ project_slug }} .
+docker build -t python-app .
 ```
 
 ## Running the Project with Docker
@@ -14,5 +14,5 @@ docker build -t {{ project_slug }} .
 Once the image is built, you can run the project in a Docker container:
 
 ```bash
-docker run -it --rm {{ project_slug }}
+docker run -it --rm python-app
 ```

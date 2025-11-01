@@ -2,13 +2,13 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [project]
-name = "{{ project_slug }}"
+name = "python-app"
 dynamic = ["version"]
-description = "{{ project_description }}"
+description = "A standalone copier repo for a composable Python containerized app."
 readme = "README.md"
 requires-python = ">=3.8, <3.13"
 authors = [
-    { name = "{{ project_name }}", email = "{{ author_email | default('contact@example.com') }}" }
+    { name = "Python App", email = "contact@example.com" }
 ]
 dependencies = [
     "pydantic[email]",
@@ -70,4 +70,4 @@ source = "vcs"
 search_parent_directories = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/{{ module_name }}"]
+packages = ["src/python_app"]
