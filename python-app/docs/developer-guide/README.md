@@ -1,5 +1,5 @@
 
-This guide is for developers who want to contribute to the `{{ module_name }}` package. It provides instructions on how to set up your development environment, run tests, and contribute to the project.
+This guide is for developers who want to contribute to the `python_app` package. It provides instructions on how to set up your development environment, run tests, and contribute to the project.
 
 ## Development Setup
 
@@ -7,8 +7,8 @@ To set up the project for development, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone {{ project_gitlab_url }}
-    cd {{ project_slug }}
+    git clone https://gitlab.com/example/python-sandbox
+    cd python-app
     ```
 
 2.  **Create a virtual environment:**

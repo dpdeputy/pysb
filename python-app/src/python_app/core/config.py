@@ -1,6 +1,5 @@
 """Configuration models for the project."""
 
-
 from pydantic import BaseModel, Field
 
 

@@ -1,8 +1,8 @@
 
 A modern, best-practices template for Python projects.
 
-[![CI/CD Pipeline](https://gitlab.com/example/{{ project_slug }}/badges/main/pipeline.svg)](https://gitlab.com/example/{{ project_slug }}/-/pipelines)
-[![codecov](https://codecov.io/gl/example/{{ project_slug }}/branch/main/graph/badge.svg)](https://codecov.io/gl/example/{{ project_slug }})
+[![CI/CD Pipeline](https://gitlab.com/example/python-app/badges/main/pipeline.svg)](https://gitlab.com/example/python-app/-/pipelines)
+[![codecov](https://codecov.io/gl/example/python-app/branch/main/graph/badge.svg)](https://codecov.io/gl/example/python-app)
 
 This repository serves as a quick-start template for new Python projects, incorporating modern development practices and tooling.
 

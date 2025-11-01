@@ -1,6 +1,7 @@
 """Unit tests for the custom exceptions in the core package."""
 
 import pytest
+
 from python_app.core.exceptions import (
     BaseError,
     ConfigurationError,

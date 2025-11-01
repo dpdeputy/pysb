@@ -16,7 +16,7 @@ def repo_root() -> Generator[Path, None, None]:
 
 
 def _run_uv(args: list[str], cwd: Path) -> subprocess.CompletedProcess[str]:
-    command = ["uv", "run", *args]
+    command = ["uv", "run", "--active", *args]
     return subprocess.run(
         command,
         cwd=cwd,

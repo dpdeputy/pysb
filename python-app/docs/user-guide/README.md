@@ -1,23 +1,23 @@
 
-This guide is for end-users of the `{{ module_name }}` package. It provides all the necessary information to get started with using the package in your own projects.
+This guide is for end-users of the `python_app` package. It provides all the necessary information to get started with using the package in your own projects.
 
 ## Installation
 
-To install the `{{ module_name }}` package, you can use `pip`:
+To install the `python_app` package, you can use `pip`:
 
 ```bash
-pip install {{ module_name }}
+pip install python_app
 ```
 
 *(Note: This assumes the package is published to PyPI. For local development, refer to the Developer Guide.)*
 
 ## Basic Usage
 
-Here's a quick example of how to use the `User` model and `UserRepository` from the `{{ module_name }}.examples` module.
+Here's a quick example of how to use the `User` model and `UserRepository` from the `python_app.examples` module.
 
 ```python
-from {{ module_name }}.examples.models import User
-from {{ module_name }}.examples.repositories import UserRepository
+from python_app.examples.models import User
+from python_app.examples.repositories import UserRepository
 
 # Create a repository instance
 repo = UserRepository()
