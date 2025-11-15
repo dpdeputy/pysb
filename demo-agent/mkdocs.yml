@@ -1,0 +1,9 @@
+theme:
+  name: material
+repo_url: https://gitlab.com/example/demo-agent
+copyright: Copyright &copy; 2024 The Demo Agent Project
+
+nav:
+  - Home: index.md
+  - User Guide: user-guide/README.md
+  - Developer Guide: developer-guide/README.md
