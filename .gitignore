@@ -1,0 +1,3 @@
+# Cache directories
+.mypy_cache/
+.ruff_cache/
