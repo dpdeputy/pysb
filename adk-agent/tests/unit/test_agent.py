@@ -2,7 +2,7 @@
 from adk_agent.agent import Agent
 
 
-def test_agent_run():
+def test_agent_run() -> None:
     """Tests that the agent runs and returns the correct message."""
     agent = Agent()
     assert agent.run() == "Agent is running."
